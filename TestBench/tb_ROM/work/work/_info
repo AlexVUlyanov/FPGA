@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test
+vsingle_port_rom
+Z0 !s110 1652618838
+!i10b 1
+!s100 aV0?ij[Rz8VLVV<B?G0oL2
+IbN6G3fJHaIf`H;?1F0b9f3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work
+w1652599623
+8C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/single_port_rom.v
+FC:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/single_port_rom.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1652618838.000000
+!s107 C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/single_port_rom.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/single_port_rom.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtb_single_port_rom
+R0
+!i10b 1
+!s100 7@hmPFm_3GB]IC@::6eQS1
+ICBJ[4?322KMANRm;U<6U_0
+R1
+R2
+w1652618835
+8C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/tb_single_port_rom.v
+FC:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/tb_single_port_rom.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/tb_single_port_rom.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/tb_single_port_rom.v|
+!i113 1
+R5
+R6

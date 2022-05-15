@@ -1,0 +1,38 @@
+`timescale 1ns/100ps
+
+module tb_single_port_rom();
+
+reg clk_s;
+reg [7:0] address_s;
+wire [7:0] q_s;
+
+single_port_rom ROM(address_s,clk_s,q_s);
+
+// Clock procedure
+always begin
+	clk_s <= 0;
+	#10;
+	clk_s <= 1;
+	#10;
+end
+integer i;
+initial begin
+	for (i = 0; i <= 50; i = i + 1) begin
+	@(posedge clk_s);
+	//#5;
+	address_s <= i;
+	end
+//	@(posedge clk_s);
+//	#5 address_s <=0;
+//	@(posedge clk_s);
+//	#5 address_s <=0;
+//	@(posedge clk_s);
+//	#5 address_s <=1;
+//	@(posedge clk_s);
+//	#5 address_s <=1;
+//	@(posedge clk_s);
+//	#5 address_s <=2;
+//	@(posedge clk_s);
+//	#5 address_s <=2;
+end
+endmodule

@@ -1,0 +1,15 @@
+C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/single_port_rom.v {1 {vlog -work work -stats=none C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/single_port_rom.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module single_port_rom
+
+Top level modules:
+	single_port_rom
+
+} {} {}} C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/tb_single_port_rom.v {1 {vlog -work work -stats=none C:/SharaUbuntu/Work/Embadded_stady/FPGA_Project/DE0_NANO/Work/Test/work/tb_single_port_rom.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_single_port_rom
+
+Top level modules:
+	tb_single_port_rom
+
+} {} {}}
