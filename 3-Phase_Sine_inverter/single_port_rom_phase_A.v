@@ -1,4 +1,4 @@
-module single_port_rom
+module single_port_rom_phase_A
 #(parameter DATA_WIDTH=8, parameter ADDR_WIDTH=8)
 (
 	input [(ADDR_WIDTH-1):0] addr,
@@ -10,7 +10,7 @@ module single_port_rom
 
 	initial
 	begin
-		$readmemb("single_port_rom_init.txt", rom);
+		$readmemb("rom_init_phase_A.txt", rom);
 	end
 
 	always @ (posedge clk)
