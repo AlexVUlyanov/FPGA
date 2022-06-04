@@ -44,7 +44,7 @@ PWM #(100, 7) PhaseB_PWM_out ( .PWM_outP(LED[2]), .PWM_outN(LED[3]),
 /////PWM-Phase C////////
 single_port_rom_phase_C #(.DATA_WIDTH(7), .ADDR_WIDTH(7))  PhaseC_ROM ( .addr(outCount_ReadROM), .clk(clock_2500Hz), .q(outNumberSineC));
 PWM #(100, 7) PhaseC_PWM_out ( .PWM_outP(LED[4]), .PWM_outN(LED[5]),
-					 .data(outNumberSineB), .clk_in((CLOCK_50)),
+					 .data(outNumberSineC), .clk_in((CLOCK_50)),
 					 .enable(SW[0]), .reset(SW[1]));
 
 
