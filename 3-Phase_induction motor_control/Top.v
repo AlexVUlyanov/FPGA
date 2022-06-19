@@ -17,8 +17,9 @@ module Top
 	output                 ADC_SCLK,
 	input 					  ADC_SDAT,
 	//////////////////////////
-	output 						GPIO_00, GPIO_01, GPIO_03
-);
+	output 						GPIO_00, GPIO_01, GPIO_03,
+	input in_UART_RX // GPIO_05
+	);
 
 wire clock_var;
 wire [6:0]outCount_ReadROM;
@@ -30,10 +31,36 @@ wire [6:0]out_NumberSineA;
 wire [6:0]out_NumberSineB;
 wire [6:0]out_NumberSineC;
 
-reg [6:0] FreqSet = 35;
+wire rx_valid;
+wire [7:0]RX_FreqSet;
+reg  [7:0] FreqSet = 0;
+
+uart_rx(
+.clk(CLOCK_50),              // Top level system clock input.
+.resetn(1'b1),               // Asynchronous active low reset.
+.uart_rxd(in_UART_RX),       // UART Recieve pin.
+.uart_rx_en(1'b1),           // Recieve enable
+.uart_rx_valid(rx_valid),    // Valid data recieved and available.
+.uart_rx_data(RX_FreqSet)    // The recieved data.
+);
+
+
+always @(posedge CLOCK_50)
+begin
+ if (rx_valid)
+ begin
+		if (RX_FreqSet == 0 || RX_FreqSet == 8'b11111111)
+		begin
+		FreqSet <= 0;
+		end
+		else
+		begin
+		FreqSet <= RX_FreqSet;
+		end
+end
+end 
 
 FreqControll (.clk(CLOCK_50), .comp(FreqSet-1), .outclok_dev(clock_var));
-
 Voltage (.clk(CLOCK_50),.PhaseA(outNumberSineA), .PhaseB(outNumberSineB), .PhaseC(outNumberSineC),
 	.Freq(FreqSet),
 	.outPhaseA(out_NumberSineA),
