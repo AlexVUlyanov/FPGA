@@ -47,20 +47,6 @@ spi_master
    .o_SPI_MOSI(ADC_SADDR)
    );
 
-/// --- RX MSB and LSB byte --- ///
-always @(posedge ADC_SCLK)
-begin
-count_byte = count_byte + 1;
-	if (count_byte == 1)
-	begin
-		rx_byte_MSB <= adc_RX_Byte;
-	end
-		if (count_byte == 2)
-		begin
-			rx_byte_LSB <= adc_RX_Byte;
-			count_byte = 0;
-		end
-end
 
 wire [7:0] w_rx_byte_MSB;
 wire [7:0] W_rx_byte_LSB;
@@ -68,21 +54,35 @@ wire [7:0] W_rx_byte_LSB;
 assign w_rx_byte_MSB = rx_byte_MSB;
 assign w_rx_byte_LSB = rx_byte_LSB;
 
-reg  [11:0] ADC_Data;
-wire [11:0] w_ADC_DAta;
+/// --- RX MSB and LSB byte --- ///
+always @(posedge o_RX_DV)
+begin
+if (count_byte == 0)
+begin
+rx_byte_MSB <= adc_RX_Byte;
+end
+end
+
+always @(posedge o_RX_DV)
+begin
+count_byte <= count_byte + 1;
+if (count_byte == 1)
+begin
+rx_byte_LSB <= adc_RX_Byte;
+count_byte <= 0;
+end
+end
+
+always @(posedge ADC_SCLK)
+begin
+ADC_Data <= {rx_byte_MSB,rx_byte_LSB};
+end
+
+reg  [15:0] ADC_Data;
+wire [15:0] w_ADC_DAta;
 
 assign w_ADC_DAta = ADC_Data;
 
-//// --- function calc ADC data 12-bit --- ////
-function [11:0] temp_ADC_data (input [7:0] MSB, LSB);
-temp_ADC_data = {MSB,LSB};   // or ((MSB<<8)|LSB);
-endfunction 
-
-/// --- 12-bit data ADC --- ///
-always @(posedge CLOCK_50)
-begin
-	ADC_Data <= temp_ADC_data(w_rx_byte_MSB,w_rx_byte_LSB);
-end
 
 //////----PWM-OUT----///////
 PWM_PID #(.DataTopValue(32767), .DataWidth(15)) (  
