@@ -47,13 +47,6 @@ spi_master
    .o_SPI_MOSI(ADC_SADDR)
    );
 
-
-wire [7:0] w_rx_byte_MSB;
-wire [7:0] W_rx_byte_LSB;
-
-assign w_rx_byte_MSB = rx_byte_MSB;
-assign w_rx_byte_LSB = rx_byte_LSB;
-
 /// --- RX MSB and LSB byte --- ///
 always @(posedge o_RX_DV)
 begin
@@ -83,11 +76,27 @@ wire [15:0] w_ADC_DAta;
 
 assign w_ADC_DAta = ADC_Data;
 
+///-----PID-----////
+
+wire signed [14:0] uk0;
+
+top_PID (
+//system signals
+.clk(CLOCK_50),                                   // clock signal
+.rst_n(1'b1),                                     // reset signal, active low
+.target(10'd1000),                                // target value 0.8 V
+.y(w_ADC_DAta),                                   // actual output value
+.kp(4'd10),                                       // proportional coefficient
+.ki(4'd9),                                        // integral coefficient
+.kd(4'd8),                                        // differential coefficient
+.uk0(uk0)                                         // pid output value
+);
+
 
 //////----PWM-OUT----///////
 PWM_PID #(.DataTopValue(32767), .DataWidth(15)) (  
 .PWM_outP(GPIO_00), 
-.data(w_ADC_DAta), 
+.data(uk0), 
 .clk_in(CLOCK_50),
 .enable(1'b1),
 .reset(1'b0));
