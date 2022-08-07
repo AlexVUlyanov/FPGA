@@ -8,8 +8,9 @@ output GPIO_00,               // PID out PWM
 output [7:0] LED
 );
 
+////SET-Controll////
 
-
+parameter reg [15:0] set = 16'd1800; // SET output 1.45 V Error = 0.036 V 1800
 
 //////-----ADC-SPI-----//////
 wire ClkDev;
@@ -76,27 +77,37 @@ wire [15:0] w_ADC_DAta;
 
 assign w_ADC_DAta = ADC_Data;
 
-///-----PID-----////
+///-----PI-----////
 
-wire signed [14:0] uk0;
+wire signed [15:0] uk0;
+wire [15:0] control_signal_saturated; 
 
-top_PID (
-//system signals
-.clk(CLOCK_50),                                   // clock signal
-.rst_n(1'b1),                                     // reset signal, active low
-.target(10'd1000),                                // target value 0.8 V
-.y(w_ADC_DAta),                                   // actual output value
-.kp(4'd10),                                       // proportional coefficient
-.ki(4'd9),                                        // integral coefficient
-.kd(4'd8),                                        // differential coefficient
-.uk0(uk0)                                         // pid output value
+PI_Controller u_pi
+  
+  ( 
+  .clk(CLOCK_50), 
+  .reset_b(1'b1),
+  .adc_in_0(w_ADC_DAta), // Sensor In
+  .adc_in_1(set), // Setpoin
+  .adc_done(1'b1), 
+  .pi_done(pi_done),
+  .u(uk0)
+  );
+  
+ comparator u_comparator 
+ (
+ .clk(CLOCK_50), 
+ .reset_b(1'b1), 
+ .pi_done(pi_done), 
+ .data_in(uk0), 
+ .data_out(control_signal_saturated)
 );
 
 
 //////----PWM-OUT----///////
 PWM_PID #(.DataTopValue(32767), .DataWidth(15)) (  
 .PWM_outP(GPIO_00), 
-.data(uk0), 
+.data(control_signal_saturated), 
 .clk_in(CLOCK_50),
 .enable(1'b1),
 .reset(1'b0));
