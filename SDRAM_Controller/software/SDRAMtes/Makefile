@@ -142,8 +142,8 @@ ACDS_VERSION := 17.1
 ELF := SDRAMtes.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world_small.c
-CXX_SRCS :=
+C_SRCS :=
+CXX_SRCS := hello_world_small.cpp
 ASM_SRCS :=
 
 

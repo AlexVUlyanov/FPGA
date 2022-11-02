@@ -1,5 +1,5 @@
 Flow report for SDRAM_DEMO
-Wed Nov 02 14:26:55 2022
+Wed Nov 02 17:44:16 2022
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                              ;
 +------------------------------------+------------------------------------------------------+
-; Flow Status                        ; EDA Netlist Writer Failed - Wed Nov 02 14:26:55 2022 ;
+; Flow Status                        ; EDA Netlist Writer Failed - Wed Nov 02 17:44:16 2022 ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition ;
 ; Revision Name                      ; SDRAM_DEMO                                           ;
 ; Top-level Entity Name              ; NIOSII                                               ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/02/2022 14:26:06 ;
+; Start date & time ; 11/02/2022 17:43:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SDRAM_DEMO          ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                    ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 238300920273011.166738836618092                          ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 238300920273011.166740020613600                          ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                              ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                     ; --            ; --          ; eda_simulation ;
@@ -105,12 +105,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:29     ; 1.0                     ; 4960 MB             ; 00:00:47                           ;
-; Fitter                    ; 00:00:10     ; 1.2                     ; 5877 MB             ; 00:00:14                           ;
+; Analysis & Synthesis      ; 00:00:29     ; 1.0                     ; 4956 MB             ; 00:00:47                           ;
+; Fitter                    ; 00:00:09     ; 1.2                     ; 5878 MB             ; 00:00:15                           ;
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 4688 MB             ; 00:00:01                           ;
 ; TimeQuest Timing Analyzer ; 00:00:02     ; 1.5                     ; 4858 MB             ; 00:00:03                           ;
 ; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4668 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:44     ; --                      ; --                  ; 00:01:07                           ;
+; Total                     ; 00:00:43     ; --                      ; --                  ; 00:01:08                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

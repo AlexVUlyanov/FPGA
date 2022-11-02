@@ -56,7 +56,7 @@ alt_putstr(const char* str)
 #else
 #ifdef ALT_USE_DIRECT_DRIVERS
     ALT_DRIVER_WRITE_EXTERNS(ALT_STDOUT_DEV);
-    return 0;//ALT_DRIVER_WRITE(ALT_STDOUT_DEV, str, strlen(str), 0);
+    return ALT_DRIVER_WRITE(ALT_STDOUT_DEV, str, strlen(str), 0);
 #else
     return fputs(str, stdout);
 #endif
