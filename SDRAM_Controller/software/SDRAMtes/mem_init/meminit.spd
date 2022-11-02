@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+<file path="hdl_sim/new_sdram_controller_0.dat" type="DAT" memoryPath="new_sdram_controller_0" />
+<file path="hdl_sim/firmware.dat" type="DAT" initParamName="INIT_FILE" memoryPath="onchip_memory2_0" />
+<file path="firmware.hex" type="HEX" initParamName="INIT_FILE" memoryPath="onchip_memory2_0" />
+</simPackage>

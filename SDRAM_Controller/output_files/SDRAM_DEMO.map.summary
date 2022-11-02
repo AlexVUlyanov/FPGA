@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 02 14:26:36 2022
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
+Revision Name : SDRAM_DEMO
+Top-level Entity Name : NIOSII
+Family : Cyclone IV E
+Total logic elements : 4,380
+    Total combinational functions : 3,461
+    Dedicated logic registers : 2,533
+Total registers : 2533
+Total pins : 42
+Total virtual pins : 1
+Total memory bits : 326,400
+Embedded Multiplier 9-bit elements : 6
+Total PLLs : 1

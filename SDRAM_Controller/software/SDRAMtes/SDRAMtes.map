@@ -1,0 +1,459 @@
+Archive member included to satisfy reference by file (symbol)
+
+../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+                              ../SDRAMtes_bsp//obj/HAL/src/crt0.o (alt_load)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+                              ../SDRAMtes_bsp//obj/HAL/src/crt0.o (alt_main)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+                              obj/default/hello_world_small.o (alt_putstr)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+                              ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o) (alt_irq_init)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                              ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+                              ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o) (_do_ctors)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                              ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
+../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                              ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o) (altera_nios2_gen2_irq_init)
+../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                              ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o) (alt_icache_flush)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+new_sdram_controller_0 0x0000000002000000 0x0000000002000000
+reset            0x0000000004008000 0x0000000000000020
+onchip_memory2_0 0x0000000004008020 0x0000000000007fe0
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+LOAD obj/default/hello_world_small.o
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libstdc++.a
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libm.a
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a
+START GROUP
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a
+LOAD ../SDRAMtes_bsp/\libhal_bsp.a
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libm.a
+END GROUP
+LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a
+                0x0000000002000000                __alt_mem_new_sdram_controller_0 = 0x2000000
+                0x0000000004008000                __alt_mem_onchip_memory2_0 = 0x4008000
+
+.entry          0x0000000004008000       0x20
+ *(.entry)
+ .entry         0x0000000004008000       0x20 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+                0x0000000004008000                __reset
+                0x000000000400801c                _exit
+
+.exceptions     0x0000000004008020        0x0 load address 0x0000000002000000
+                0x0000000004008020                PROVIDE (__ram_exceptions_start, ABSOLUTE (.))
+                0x0000000004008020                . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ *(.exceptions.entry.user)
+ *(.exceptions.entry.ecc_fatal)
+ *(.exceptions.entry)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ *(.exceptions.notirq.label)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ *(.exceptions.exit.label)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ *(.exceptions)
+                0x0000000004008020                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
+                0x0000000002000000                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
+
+.text           0x0000000002000000      0x24c
+                [!provide]                        PROVIDE (stext, ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000002000000       0x4c ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+                0x0000000002000000                _start
+ .text          0x000000000200004c        0x0 obj/default/hello_world_small.o
+ .text.startup  0x000000000200004c       0x18 obj/default/hello_world_small.o
+                0x000000000200004c                main
+ .text          0x0000000002000064       0xe0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+                0x0000000002000064                alt_load
+ .text          0x0000000002000144       0x30 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000002000144                alt_main
+ .text          0x0000000002000174        0x8 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+                0x0000000002000174                alt_putstr
+ .text          0x000000000200017c       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x000000000200017c                alt_irq_init
+                0x000000000200019c                alt_sys_init
+ .text          0x00000000020001a0       0x18 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x00000000020001a0                alt_dcache_flush_all
+ .text          0x00000000020001b8       0x48 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+                0x00000000020001b8                _do_ctors
+ .text          0x0000000002000200        0xc ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000002000200                alt_icache_flush_all
+ .text          0x000000000200020c        0x8 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x000000000200020c                altera_nios2_gen2_irq_init
+ .text          0x0000000002000214       0x38 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                0x0000000002000214                alt_icache_flush
+ *(.gnu.warning.*)
+ *(.fini)
+                [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
+                [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
+                [!provide]                        PROVIDE (etext, ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x000000000200024c                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__init_array_start, ABSOLUTE (.))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__fini_array_start, ABSOLUTE (.))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end, ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table .gcc_except_table.*)
+ *(.dynamic)
+                0x000000000200024c                PROVIDE (__CTOR_LIST__, ABSOLUTE (.))
+ *(.ctors)
+ *(SORT(.ctors.*))
+                0x000000000200024c                PROVIDE (__CTOR_END__, ABSOLUTE (.))
+                [!provide]                        PROVIDE (__DTOR_LIST__, ABSOLUTE (.))
+ *(.dtors)
+ *(SORT(.dtors.*))
+                [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
+ *(.jcr)
+                0x000000000200024c                . = ALIGN (0x4)
+
+.rodata         0x000000000200024c       0x18
+                0x000000000200024c                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x000000000200024c                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x000000000200024c       0x18 obj/default/hello_world_small.o
+                                         0x15 (size before relaxing)
+ *(.rodata1)
+                0x0000000002000264                . = ALIGN (0x4)
+                0x0000000002000264                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x000000000200024c                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+
+.rwdata         0x0000000002000264        0x0
+                0x0000000002000264                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x0000000002000264                . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .data          0x0000000002000264        0x0 obj/default/hello_world_small.o
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x0000000002000264        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                0x0000000002008264                _gp = ABSOLUTE ((. + 0x8000))
+                [!provide]                        PROVIDE (gp, _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x0000000002000264                . = ALIGN (0x4)
+                0x0000000002000264                _edata = ABSOLUTE (.)
+                [!provide]                        PROVIDE (edata, ABSOLUTE (.))
+                0x0000000002000264                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0000000002000264                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+
+.bss            0x0000000002000264        0xc
+                0x0000000002000264                __bss_start = ABSOLUTE (.)
+                [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000002000264        0xc ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000002000264                alt_envp
+                0x0000000002000268                alt_argv
+                0x000000000200026c                alt_argc
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000002000270        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x0000000002000270        0x0 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ *(COMMON)
+                0x0000000002000270                . = ALIGN (0x4)
+                0x0000000002000270                __bss_end = ABSOLUTE (.)
+
+.new_sdram_controller_0
+                0x0000000002000270        0x0
+                [!provide]                        PROVIDE (_alt_partition_new_sdram_controller_0_start, ABSOLUTE (.))
+ *(.new_sdram_controller_0 .new_sdram_controller_0. new_sdram_controller_0.*)
+                0x0000000002000270                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_new_sdram_controller_0_end, ABSOLUTE (.))
+                0x0000000002000270                _end = ABSOLUTE (.)
+                0x0000000002000270                end = ABSOLUTE (.)
+                0x0000000002000270                __alt_stack_base = ABSOLUTE (.)
+                [!provide]                        PROVIDE (_alt_partition_new_sdram_controller_0_load_addr, LOADADDR (.new_sdram_controller_0))
+
+.onchip_memory2_0
+                0x0000000004008020        0x0 load address 0x0000000002000270
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
+ *(.onchip_memory2_0 .onchip_memory2_0. onchip_memory2_0.*)
+                0x0000000004008020                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_load_addr, LOADADDR (.onchip_memory2_0))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x23
+ *(.comment)
+ .comment       0x0000000000000000       0x23 obj/default/hello_world_small.o
+                                         0x24 (size before relaxing)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .comment       0x0000000000000023       0x24 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x168
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x0000000000000028       0x20 obj/default/hello_world_small.o
+ .debug_aranges
+                0x0000000000000048       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_aranges
+                0x0000000000000068       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_aranges
+                0x0000000000000088       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_aranges
+                0x00000000000000a8       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x00000000000000c8       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x00000000000000e8       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .debug_aranges
+                0x0000000000000108       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x0000000000000128       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_aranges
+                0x0000000000000148       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0x9cf
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x8e ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x000000000000008e       0x65 obj/default/hello_world_small.o
+ .debug_info    0x00000000000000f3      0x1c9 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_info    0x00000000000002bc      0x1a3 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_info    0x000000000000045f       0xe9 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x0000000000000548      0x10f ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x0000000000000657       0xa6 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x00000000000006fd       0x84 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .debug_info    0x0000000000000781       0xb8 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000000839       0xb8 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_info    0x00000000000008f1       0xde ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug_abbrev   0x0000000000000000      0x5f8
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x12 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x0000000000000012       0x64 obj/default/hello_world_small.o
+ .debug_abbrev  0x0000000000000076       0xd8 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x000000000000014e       0xf5 ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x0000000000000243       0x99 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x00000000000002dc       0xd8 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x00000000000003b4       0x5a ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x000000000000040e       0x79 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .debug_abbrev  0x0000000000000487       0x6f ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x00000000000004f6       0x67 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_abbrev  0x000000000000055d       0x9b ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug_line     0x0000000000000000      0x5af
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x72 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x0000000000000072       0x75 obj/default/hello_world_small.o
+ .debug_line    0x00000000000000e7       0xa4 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_line    0x000000000000018b       0xed ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_line    0x0000000000000278       0x47 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x00000000000002bf       0xbf ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x000000000000037e       0x5a ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x00000000000003d8       0x60 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .debug_line    0x0000000000000438       0x6e ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x00000000000004a6       0x8c ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x0000000000000532       0x7d ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug_frame    0x0000000000000000      0x194
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x28 obj/default/hello_world_small.o
+ .debug_frame   0x0000000000000028       0x30 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_frame   0x0000000000000058       0x2c ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_frame   0x0000000000000084       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x00000000000000a4       0x3c ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x00000000000000e0       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x0000000000000100       0x34 ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .debug_frame   0x0000000000000134       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x0000000000000154       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_frame   0x0000000000000174       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug_str      0x0000000000000000      0x4b8
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0xbb obj/default/hello_world_small.o
+                                         0xc0 (size before relaxing)
+ .debug_str     0x00000000000000bb      0x1da ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+                                        0x259 (size before relaxing)
+ .debug_str     0x0000000000000295       0xba ../SDRAMtes_bsp/\libhal_bsp.a(alt_main.o)
+                                        0x205 (size before relaxing)
+ .debug_str     0x000000000000034f       0x54 ../SDRAMtes_bsp/\libhal_bsp.a(alt_putstr.o)
+                                        0x19d (size before relaxing)
+ .debug_str     0x00000000000003a3       0x4d ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+                                        0x1ce (size before relaxing)
+ .debug_str     0x00000000000003f0       0x1f ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                                        0x172 (size before relaxing)
+ .debug_str     0x000000000000040f       0x3e ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+                                         0xed (size before relaxing)
+ .debug_str     0x000000000000044d       0x30 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                                        0x183 (size before relaxing)
+ .debug_str     0x000000000000047d       0x20 ../SDRAMtes_bsp/\libhal_bsp.a(altera_nios2_gen2_irq.o)
+                                        0x1a2 (size before relaxing)
+ .debug_str     0x000000000000049d       0x1b ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                                        0x178 (size before relaxing)
+
+.debug_loc      0x0000000000000000       0xbd
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x21 ../SDRAMtes_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x0000000000000021       0x1f ../SDRAMtes_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_loc     0x0000000000000040       0x2b ../SDRAMtes_bsp/\libhal_bsp.a(alt_do_ctors.o)
+ .debug_loc     0x000000000000006b       0x52 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x0000000000000000       0x30
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x0000000000000000       0x30 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+                0x0000000004000000                __alt_data_end = 0x4000000
+                0x0000000004000000                PROVIDE (__alt_stack_pointer, __alt_data_end)
+                [!provide]                        PROVIDE (__alt_stack_limit, __alt_stack_base)
+                [!provide]                        PROVIDE (__alt_heap_start, end)
+                [!provide]                        PROVIDE (__alt_heap_limit, 0x4000000)
+OUTPUT(SDRAMtes.elf elf32-littlenios2)
+
+.debug_ranges   0x0000000000000000       0x88
+ .debug_ranges  0x0000000000000000       0x20 ../SDRAMtes_bsp//obj/HAL/src/crt0.o
+ .debug_ranges  0x0000000000000020       0x10 obj/default/hello_world_small.o
+ .debug_ranges  0x0000000000000030       0x48 ../SDRAMtes_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_ranges  0x0000000000000078       0x10 ../SDRAMtes_bsp/\libhal_bsp.a(alt_icache_flush.o)
