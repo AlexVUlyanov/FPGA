@@ -1,0 +1,52 @@
+15:17:49 **** Build of configuration Nios II for project cpu ****
+make mem_init_generate 
+Info: Building ../cpu_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../cpu_bsp/
+[BSP build complete]
+Post-processing to create mem_init/mem_init.hex...
+elf2hex cpu.elf 0x00001000 0x00001fff --width=32 --little-endian-mem --create-lanes=0 mem_init/mem_init.hex
+Post-processing to create mem_init/hdl_sim/mem_init.dat...
+elf2dat --infile=cpu.elf --outfile=mem_init/hdl_sim/mem_init.dat \
+		--base=0x00001000 --end=0x00001fff --width=32 \
+		--little-endian-mem --create-lanes=0 
+Post-processing to create mem_init/hdl_sim/mem_init.sym...
+nios2-elf-nm -n cpu.elf > mem_init/hdl_sim/mem_init.sym
+15:17:57 **** Incremental Build of configuration Nios II for project cpu ****
+make all 
+Info: Building ../cpu_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../cpu_bsp/
+[BSP build complete]
+[cpu build complete]
+15:21:41 **** Incremental Build of configuration Nios II for project cpu ****
+make all 
+Info: Building ../cpu_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../cpu_bsp/
+[BSP build complete]
+[cpu build complete]
+15:24:35 **** Incremental Build of configuration Nios II for project cpu ****
+make all 
+Info: Building ../cpu_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../cpu_bsp/
+[BSP build complete]
+Info: Compiling hello_world_small.cpp to obj/default/hello_world_small.o
+nios2-elf-gcc -xc++ -MP -MMD -c -I../cpu_bsp//HAL/inc -I../cpu_bsp/ -I../cpu_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)' -DALT_NO_EXIT -DALT_USE_DIRECT_DRIVERS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED      -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/hello_world_small.o hello_world_small.cpp
+Info: Linking cpu.elf
+nios2-elf-g++  -T'../cpu_bsp//linker.x' -msys-crt0='../cpu_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../cpu_bsp/  -msmallc  -Wl,-Map=cpu.map   -Os -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o cpu.elf obj/default/hello_world_small.o -lm -msys-lib=m
+nios2-elf-insert cpu.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev none --stdin_dev none --stdout_dev none --sopc_system_name CPU --quartus_project_dir "E:/Stady/Embadded_stady/FPGA_Project/DE0_NANO/Work/NIOS" --jdi ../..//output_files/NIOS.jdi --sopcinfo E:/Stady/Embadded_stady/FPGA_Project/DE0_NANO/Work/NIOS/software/cpu_bsp/../../CPU.sopcinfo
+Info: (cpu.elf) 1192 Bytes program size (code + initialized data).
+Info:           2904 Bytes free for stack + heap.
+Info: Creating cpu.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source cpu.elf >cpu.objdump
+[cpu build complete]
+15:27:20 **** Incremental Build of configuration Nios II for project cpu ****
+make all 
+Info: Building ../cpu_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../cpu_bsp/
+[BSP build complete]
+[cpu build complete]
+15:27:33 **** Incremental Build of configuration Nios II for project cpu ****
+make all 
+Info: Building ../cpu_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../cpu_bsp/
+[BSP build complete]
+[cpu build complete]

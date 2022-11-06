@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Nov 06 11:29:19 2022
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
+Revision Name : NIOS
+Top-level Entity Name : CPU
+Family : Cyclone IV E
+Total logic elements : 1,439
+    Total combinational functions : 1,301
+    Dedicated logic registers : 740
+Total registers : 740
+Total pins : 3
+Total virtual pins : 0
+Total memory bits : 43,008
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
