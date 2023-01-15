@@ -1,0 +1,86 @@
+module PWM_mod(
+
+input clk,
+
+input [23:0]Ua,
+input [23:0]Ub,
+input [23:0]Uc,
+
+output outUA_P,
+output outUA_N,
+
+output outUB_P,
+output outUB_N,
+
+output outUC_P,
+output outUC_N
+				
+);
+
+reg [23:0] cnt = 101000101011_111100111110; // - 555.9528;
+
+always @(posedge clk)
+begin
+		if (cnt >= 24'h22BF3E)
+			begin
+			//	qadd add ( );
+			end
+end
+
+assign outUC_N = 1;
+
+endmodule
+
+//----------------------------------------------------//
+module qadd #(
+
+	parameter Q = 12,
+	parameter N = 24
+	)
+	(
+    input [N-1:0] a,
+    input [N-1:0] b,
+    output [N-1:0] c
+    );
+
+reg [N-1:0] res;
+
+assign c = res;
+
+always @(a,b) begin
+
+	if(a[N-1] == b[N-1]) begin						
+		res[N-2:0] = a[N-2:0] + b[N-2:0];		
+		res[N-1] = a[N-1];							 
+															
+															  
+		end												
+	
+	else if(a[N-1] == 0 && b[N-1] == 1) begin		
+		if( a[N-2:0] > b[N-2:0] ) begin				
+			res[N-2:0] = a[N-2:0] - b[N-2:0];		
+			res[N-1] = 0;									
+			end
+		else begin											
+			res[N-2:0] = b[N-2:0] - a[N-2:0];		
+			if (res[N-2:0] == 0)
+				res[N-1] = 0;								
+			else
+				res[N-1] = 1;								
+			end
+		end
+	else begin												
+		if( a[N-2:0] > b[N-2:0] ) begin					
+			res[N-2:0] = a[N-2:0] - b[N-2:0];			
+			if (res[N-2:0] == 0)
+				res[N-1] = 0;									
+			else
+				res[N-1] = 1;									
+			end
+		else begin												
+			res[N-2:0] = b[N-2:0] - a[N-2:0];			
+			res[N-1] = 0;										
+			end
+		end
+	end
+endmodule
