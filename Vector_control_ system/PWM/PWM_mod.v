@@ -1,11 +1,11 @@
 module PWM_mod(
 
 input clk,reset,
-/*
+
 input [23:0]Ua,
 input [23:0]Ub,
 input [23:0]Uc,
-*/
+
 
 output outUA_P,
 output outUA_N,
@@ -27,11 +27,11 @@ reg			[1:0] zerro_detect	= 2'b0; // детекция пересечения 0 - 
 wire        [22:0] w_count;
 wire		   [23:0] w_triangl_out;
 
-
+/* test 
 wire [23:0]Ua = 24'b00001001011_011000000110;
 wire [23:0]Ub = 24'b10001001011_011000000110;
 wire [23:0]Uc = 24'b00001000100_101111001010;
-
+*/
 
 // проверка нуля и знака 
 wire [1:0] w_zerro_detect;
