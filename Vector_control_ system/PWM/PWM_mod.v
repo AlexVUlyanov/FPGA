@@ -1,10 +1,11 @@
 module PWM_mod(
 
 input clk,reset,
-
+/*
 input [23:0]Ua,
 input [23:0]Ub,
 input [23:0]Uc,
+*/
 
 output outUA_P,
 output outUA_N,
@@ -17,8 +18,7 @@ output outUC_N
 				
 );
 
-
-reg        [23:0] const_step     = 23'h0001C2;// 0.10986328125 шаг
+reg        [22:0] const_step     = 23'h0001C2;// 0.10986328125 шаг
 reg        [22:0] count 		   = 23'h22BF10; // инициализация 555.94140625
 reg		         temp_sign 		= 1'b1; // инициализация минуса по умолчанию начинаем с -555.94140625
 reg 			      count_up 	   = 1'b0; // считать вверх 1 / низ 0
@@ -26,6 +26,12 @@ reg			[1:0] zerro_detect	= 2'b0; // детекция пересечения 0 - 
 
 wire        [22:0] w_count;
 wire		   [23:0] w_triangl_out;
+
+
+wire [23:0]Ua = 24'b00001001011_011000000110;
+wire [23:0]Ub = 24'b10001001011_011000000110;
+wire [23:0]Uc = 24'b00001000100_101111001010;
+
 
 // проверка нуля и знака 
 wire [1:0] w_zerro_detect;
