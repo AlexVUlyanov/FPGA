@@ -1,0 +1,14 @@
+module dq_to_ABC (
+
+input [23:0] CosQ,
+input [23:0] SinQ,
+input [23:0] d,
+input [23:0] q,
+
+output [23:0] A,
+output [23:0] B,
+output [23:0] C
+
+);
+
+endmodule
