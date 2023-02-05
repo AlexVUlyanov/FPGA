@@ -9,13 +9,14 @@ output	[23:0]	CosQ
 
 );
 
-
+// FlowCalc flow_ (.reset(1'b1), .Id(Id), .F(SinQ));
 
 
 endmodule
 
 
 module FlowCalc(
+input				 reset,
 input 	[23:0] Id,
 output 	[23:0] F
 );
@@ -25,8 +26,12 @@ qmult_RM mule1 (.i_multiplicand(Id), .i_multiplier(24'b000000000000_001001000001
 
 wire [23:0] w_sub1;
 wire [23:0] w_mul_integral;
+
 qadd_RM sub1 (.a(w_mule1_out), .b(w_mul_integral), .c(w_sub1));
 
+Integrator integrator1 (.clk(clk), .reset(1'b1), .in_integrator(w_sub1), .out_integrator(F));
+
+qmult_RM mule2 (.i_multiplicand(F), .i_multiplier(24'b100000000001_101000110110), .o_result(w_mul_integral)); // F*(-1.6384181)
 
 endmodule
 
