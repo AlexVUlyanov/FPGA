@@ -9,13 +9,13 @@ output	[23:0]	CosQ
 
 );
 
-Integrator integral (.clk(clk), .reset(1'b1), .in_integrator(Iq), .out_integrator(SinQ));
+
 
 
 endmodule
 
 
-module FlouCalc(
+module FlowCalc(
 input 	[23:0] Id,
 output 	[23:0] F
 );
