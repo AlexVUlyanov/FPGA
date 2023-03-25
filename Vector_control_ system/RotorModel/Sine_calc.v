@@ -21,7 +21,7 @@ wire	[23:0] sum3;
 wire	[23:0] sum4;
 
 qmult_SN SUM1 (.i_multiplicand(y), .i_multiplier(24'b000000000001_100100100001), .o_result(sum1));
-qmult_SN SUM2 (.i_multiplicand(y3), .i_multiplier(24'b100000000001_101001010101), .o_result(sum2));
+qmult_SN SUM2 (.i_multiplicand(y3), .i_multiplier(24'b100000000000_101001010101), .o_result(sum2));
 qmult_SN SUM3 (.i_multiplicand(y5), .i_multiplier(24'b000000000000_000101000110), .o_result(sum3));
 qmult_SN SUM4 (.i_multiplicand(y7), .i_multiplier(24'b100000000000_000000010011), .o_result(sum4));
 
