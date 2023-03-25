@@ -25,6 +25,15 @@ qmult_SN SUM2 (.i_multiplicand(y3), .i_multiplier(24'b100000000001_101001010101)
 qmult_SN SUM3 (.i_multiplicand(y5), .i_multiplier(24'b000000000000_000101000110), .o_result(sum3));
 qmult_SN SUM4 (.i_multiplicand(y7), .i_multiplier(24'b100000000000_000000010011), .o_result(sum4));
 
+wire	[23:0] sum12;
+qadd_SN SUM12 (.a(sum1), .b(sum2), .c(sum12));
+wire	[23:0] sum123;
+qadd_SN SUM123 (.a(sum12), .b(sum3), .c(sum123));
+wire	[23:0] sum1234;
+qadd_SN SUM1234 (.a(sum123), .b(sum4), .c(sum1234));
+
+assign SinQ = sum1234;
+
 endmodule
 
 //-----MUL-------//
